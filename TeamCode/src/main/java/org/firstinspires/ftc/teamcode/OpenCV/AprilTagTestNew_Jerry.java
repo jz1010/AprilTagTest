@@ -180,7 +180,7 @@ public class AprilTagTestNew_Jerry extends LinearOpMode
             telemetry.addLine("Red Alliance Small");
             telemetry.update();
         } else if (tagOfInterest.id == RED_LARGE) {
-            telemetry.addLine("Red Alliance Right");
+            telemetry.addLine("Red Alliance Large");
             telemetry.update();
         }
 
