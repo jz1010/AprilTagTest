@@ -36,12 +36,19 @@ public class AprilTagTestNew_Jerry extends LinearOpMode
     // UNITS ARE METERS
     double tagsize = 0.166;
 
-    //Tag ID of interest
-    int LEFT=1;
-    //int REDWALL=find form website;
-    //int REDLEFT
-    int MIDDLE=2;
-    int RIGHT=3;
+    //April Tag ID of interest
+    int BLUE_LEFT=1;
+    int BLUE_MIDDLE=2;
+    int BLUE_RIGHT=3;
+
+    int BLUE_SMALL = 9;
+    int BLUE_LARGE = 10;
+
+    int RED_LEFT=4;
+    int RED_MIDDLE=5;
+    int RED_RIGHT=6;
+    int RED_SMALL = 8;
+    int RED_LARGE = 7;
 
     AprilTagDetection tagOfInterest = null;
 
@@ -93,7 +100,7 @@ public class AprilTagTestNew_Jerry extends LinearOpMode
                 boolean tagFound = false;
 
                 for (AprilTagDetection tag : currentDetections) {
-                    if (tag.id == LEFT || tag.id == MIDDLE || tag.id == RIGHT) {
+                    if (tag.id == BLUE_LEFT || tag.id == BLUE_MIDDLE || tag.id == BLUE_RIGHT || tag.id == BLUE_SMALL || tag.id == BLUE_LARGE || tag.id == RED_LEFT || tag.id == RED_MIDDLE || tag.id == RED_RIGHT || tag.id == RED_SMALL || tag.id == RED_LARGE ) {
                         tagOfInterest = tag;
                         tagFound = true;
                         break;
@@ -146,16 +153,37 @@ public class AprilTagTestNew_Jerry extends LinearOpMode
         }
 
         /* Actually do something useful */
-        if (tagOfInterest == null || tagOfInterest.id == LEFT) {
-            telemetry.addLine("Left");
+        if (tagOfInterest.id == BLUE_LEFT) {
+            telemetry.addLine("Blue Alliance Left");
             telemetry.update();
-        } else if (tagOfInterest.id == MIDDLE) {
-            telemetry.addLine("Middle");
+        } else if (tagOfInterest.id == BLUE_MIDDLE) {
+            telemetry.addLine("Blue Alliance Middle");
             telemetry.update();
-        } else if (tagOfInterest.id == RIGHT) {
-            telemetry.addLine("Right");
+        } else if (tagOfInterest.id == BLUE_RIGHT) {
+            telemetry.addLine("Blue Alliance Right");
+            telemetry.update();
+        } else if (tagOfInterest.id == BLUE_SMALL) {
+            telemetry.addLine("Blue Alliance Small");
+            telemetry.update();
+        } else if (tagOfInterest.id == BLUE_LARGE) {
+            telemetry.addLine("Blue Alliance Large");
+            telemetry.update();
+        } else if (tagOfInterest.id == RED_LEFT) {
+            telemetry.addLine("Red Alliance Left");
+            telemetry.update();
+        } else if (tagOfInterest.id == RED_MIDDLE) {
+            telemetry.addLine("Red Alliance Middle");
+            telemetry.update();
+        } else if (tagOfInterest.id == RED_RIGHT) {
+            telemetry.addLine("Red Alliance Right");
+        } else if (tagOfInterest.id == RED_SMALL) {
+            telemetry.addLine("Red Alliance Small");
+            telemetry.update();
+        } else if (tagOfInterest.id == RED_LARGE) {
+            telemetry.addLine("Red Alliance Right");
             telemetry.update();
         }
+
 
 
         /* You wouldn't have this in your autonomous, this is just to prevent the sample from ending */
@@ -166,7 +194,7 @@ public class AprilTagTestNew_Jerry extends LinearOpMode
                 boolean tagFound = false;
 
                 for (AprilTagDetection tag : currentDetections) {
-                    if (tag.id == LEFT || tag.id == MIDDLE || tag.id == RIGHT) {
+                    if (tag.id == BLUE_LEFT || tag.id == BLUE_MIDDLE || tag.id == BLUE_RIGHT || tag.id == BLUE_SMALL || tag.id == BLUE_LARGE || tag.id == RED_LEFT || tag.id == RED_MIDDLE || tag.id == RED_RIGHT || tag.id == RED_SMALL || tag.id == RED_LARGE ) {
                         tagOfInterest = tag;
                         tagFound = true;
                         break;
