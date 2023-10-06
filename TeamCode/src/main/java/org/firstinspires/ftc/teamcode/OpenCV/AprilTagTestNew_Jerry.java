@@ -95,6 +95,8 @@ public class AprilTagTestNew_Jerry extends LinearOpMode
                 telemetry.addLine("Red Alliance Large");
                 telemetry.update();
             }
+
+
         }
         telemetry.addData("Translation X (feet)", detection.pose.x * FEET_PER_METER);
         telemetry.addData("Translation Y (feet)", detection.pose.y * FEET_PER_METER);
