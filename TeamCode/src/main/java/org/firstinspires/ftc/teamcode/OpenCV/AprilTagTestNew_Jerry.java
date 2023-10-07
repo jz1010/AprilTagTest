@@ -98,17 +98,17 @@ public class AprilTagTestNew_Jerry extends LinearOpMode
 
 
         }
-        telemetry.addData("Translation X (feet)", detection.pose.x * FEET_PER_METER);
-        telemetry.addData("Translation Y (feet)", detection.pose.y * FEET_PER_METER);
-        telemetry.addData("Translation Z (feet)", detection.pose.z * FEET_PER_METER);
-
-        Orientation rot = Orientation.getOrientation(detection.pose.R, AxesReference.INTRINSIC, AxesOrder.YXZ, AngleUnit.DEGREES);
-
-        telemetry.addData("Rotation Yaw (degrees)", rot.firstAngle);
-        telemetry.addData("Rotation Pitch (degrees)", rot.secondAngle);
-        telemetry.addData("Rotation Roll (degrees)", rot.thirdAngle);
-        //if else for which tag id its looking at --> add
-        telemetry.update();
+//        telemetry.addData("Translation X (feet)", detection.pose.x * FEET_PER_METER);
+//        telemetry.addData("Translation Y (feet)", detection.pose.y * FEET_PER_METER);
+//        telemetry.addData("Translation Z (feet)", detection.pose.z * FEET_PER_METER);
+//
+//        Orientation rot = Orientation.getOrientation(detection.pose.R, AxesReference.INTRINSIC, AxesOrder.YXZ, AngleUnit.DEGREES);
+//
+//        telemetry.addData("Rotation Yaw (degrees)", rot.firstAngle);
+//        telemetry.addData("Rotation Pitch (degrees)", rot.secondAngle);
+//        telemetry.addData("Rotation Roll (degrees)", rot.thirdAngle);
+//        //if else for which tag id its looking at --> add
+//        telemetry.update();
     }
 
     @Override
