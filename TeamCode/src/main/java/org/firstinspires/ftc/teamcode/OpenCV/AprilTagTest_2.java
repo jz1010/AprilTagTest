@@ -132,17 +132,15 @@ public class AprilTagTest_2 extends LinearOpMode
             ArrayList<AprilTagDetection> currentDetections = aprilTagDetectionPipeline.getLatestDetections();
 
             if (currentDetections.size() != 0) {
-                boolean tagFound = false;
 
                 for (AprilTagDetection tag : currentDetections) {
                     if (tag.id == BLUE_LEFT || tag.id == BLUE_MIDDLE || tag.id == BLUE_RIGHT || tag.id == BLUE_SMALL || tag.id == BLUE_LARGE || tag.id == RED_LEFT || tag.id == RED_MIDDLE || tag.id == RED_RIGHT || tag.id == RED_SMALL || tag.id == RED_LARGE ) {
                         tagOfInterest = tag;
-                        tagFound = true;
                         break;
                     }
                 }
 
-                if (tagFound) {
+                if (tagOfInterest!=null) {
                     telemetry.addLine("Tag of interest is in sight!\n\nLocation data:");
                     tagToTelemetry(tagOfInterest);
                 } else {
@@ -187,17 +185,14 @@ public class AprilTagTest_2 extends LinearOpMode
             ArrayList<AprilTagDetection> currentDetections = aprilTagDetectionPipeline.getLatestDetections();
 
             if (currentDetections.size() != 0) {
-                boolean tagFound = false;
-
                 for (AprilTagDetection tag : currentDetections) {
                     if (tag.id == BLUE_LEFT || tag.id == BLUE_MIDDLE || tag.id == BLUE_RIGHT || tag.id == BLUE_SMALL || tag.id == BLUE_LARGE || tag.id == RED_LEFT || tag.id == RED_MIDDLE || tag.id == RED_RIGHT || tag.id == RED_SMALL || tag.id == RED_LARGE ) {
                         tagOfInterest = tag;
-                        tagFound = true;
                         break;
                     }
                 }
 
-                if (tagFound) {
+                if (tagOfInterest!=null) {
                     telemetry.addLine("Tag of interest is in sight!\n\nLocation data:");
                     tagToTelemetry(tagOfInterest);
                 } else {
