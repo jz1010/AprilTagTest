@@ -65,6 +65,49 @@ public class AprilTagTestNew_Jerry extends LinearOpMode
         telemetry.addData("Rotation Yaw (degrees)", rot.firstAngle);
         telemetry.addData("Rotation Pitch (degrees)", rot.secondAngle);
         telemetry.addData("Rotation Roll (degrees)", rot.thirdAngle);
+
+        if (tagOfInterest != null) {
+            if (tagOfInterest != null) {
+                telemetry.addLine("Tag snapshot:\n");
+                tagToTelemetry(tagOfInterest);
+                telemetry.update();
+            } else {
+                telemetry.addLine("No tag snapshot available, it was never sighted during the init loop :(");
+                telemetry.update();
+            }
+
+            /* Actually do something useful */
+            if (tagOfInterest.id == BLUE_LEFT) {
+                telemetry.addLine("Blue Alliance Left");
+                telemetry.update();
+            } else if (tagOfInterest.id == BLUE_MIDDLE) {
+                telemetry.addLine("Blue Alliance Middle");
+                telemetry.update();
+            } else if (tagOfInterest.id == BLUE_RIGHT) {
+                telemetry.addLine("Blue Alliance Right");
+                telemetry.update();
+            } else if (tagOfInterest.id == BLUE_SMALL) {
+                telemetry.addLine("Blue Alliance Small");
+                telemetry.update();
+            } else if (tagOfInterest.id == BLUE_LARGE) {
+                telemetry.addLine("Blue Alliance Large");
+                telemetry.update();
+            } else if (tagOfInterest.id == RED_LEFT) {
+                telemetry.addLine("Red Alliance Left");
+                telemetry.update();
+            } else if (tagOfInterest.id == RED_MIDDLE) {
+                telemetry.addLine("Red Alliance Middle");
+                telemetry.update();
+            } else if (tagOfInterest.id == RED_RIGHT) {
+                telemetry.addLine("Red Alliance Right");
+            } else if (tagOfInterest.id == RED_SMALL) {
+                telemetry.addLine("Red Alliance Small");
+                telemetry.update();
+            } else if (tagOfInterest.id == RED_LARGE) {
+                telemetry.addLine("Red Alliance Large");
+                telemetry.update();
+            }
+        }
         //if else for which tag id its looking at --> add
         telemetry.update();
     }
@@ -144,48 +187,7 @@ public class AprilTagTestNew_Jerry extends LinearOpMode
          */
 
         /* Update the telemetry */
-        if (tagOfInterest != null) {
-            if (tagOfInterest != null) {
-                telemetry.addLine("Tag snapshot:\n");
-                tagToTelemetry(tagOfInterest);
-                telemetry.update();
-            } else {
-                telemetry.addLine("No tag snapshot available, it was never sighted during the init loop :(");
-                telemetry.update();
-            }
 
-            /* Actually do something useful */
-            if (tagOfInterest.id == BLUE_LEFT) {
-                telemetry.addLine("Blue Alliance Left");
-                telemetry.update();
-            } else if (tagOfInterest.id == BLUE_MIDDLE) {
-                telemetry.addLine("Blue Alliance Middle");
-                telemetry.update();
-            } else if (tagOfInterest.id == BLUE_RIGHT) {
-                telemetry.addLine("Blue Alliance Right");
-                telemetry.update();
-            } else if (tagOfInterest.id == BLUE_SMALL) {
-                telemetry.addLine("Blue Alliance Small");
-                telemetry.update();
-            } else if (tagOfInterest.id == BLUE_LARGE) {
-                telemetry.addLine("Blue Alliance Large");
-                telemetry.update();
-            } else if (tagOfInterest.id == RED_LEFT) {
-                telemetry.addLine("Red Alliance Left");
-                telemetry.update();
-            } else if (tagOfInterest.id == RED_MIDDLE) {
-                telemetry.addLine("Red Alliance Middle");
-                telemetry.update();
-            } else if (tagOfInterest.id == RED_RIGHT) {
-                telemetry.addLine("Red Alliance Right");
-            } else if (tagOfInterest.id == RED_SMALL) {
-                telemetry.addLine("Red Alliance Small");
-                telemetry.update();
-            } else if (tagOfInterest.id == RED_LARGE) {
-                telemetry.addLine("Red Alliance Large");
-                telemetry.update();
-            }
-        }
 
 
 
