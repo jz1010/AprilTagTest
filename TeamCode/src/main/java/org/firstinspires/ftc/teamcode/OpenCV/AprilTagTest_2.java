@@ -113,7 +113,7 @@ public class AprilTagTest_2 extends LinearOpMode
         camera.openCameraDeviceAsync(new OpenCvCamera.AsyncCameraOpenListener() {
             @Override
             public void onOpened() {
-                camera.startStreaming(800, 448, OpenCvCameraRotation.UPRIGHT);
+                camera.startStreaming(1280, 720, OpenCvCameraRotation.UPRIGHT);
             }
 
             @Override
@@ -169,15 +169,6 @@ public class AprilTagTest_2 extends LinearOpMode
             telemetry.update();
             sleep(20);
         }
-
-        /*
-         * The START command just came in: now work off the latest snapshot acquired
-         * during the init loop.
-         */
-
-        /* Update the telemetry */
-
-
 
 
         /* You wouldn't have this in your autonomous, this is just to prevent the sample from ending */
